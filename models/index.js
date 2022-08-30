@@ -2,7 +2,7 @@ const User = require('./user');
 const Character = require('./character')
 const Campaign = require('./campaign')
 
-Character.belongsto(User, {
+Character.belongsTo(User, {
     foreignKey: 'player_id'
 });
 
@@ -11,7 +11,7 @@ User.hasMany(Character, {
     onDelete: 'CASCADE',
 });
 
-Campaign.belongsto(User, {
+Campaign.belongsTo(User, {
     foreignKey: 'dm_id'
 });
 
@@ -20,7 +20,7 @@ User.hasMany(Campaign, {
     onDelete: 'CASCADE',
 });
 
-Character.belongsto(Campaign, {
+Character.belongsTo(Campaign, {
     foreignKey: 'character_id'
 });
 
