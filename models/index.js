@@ -1,6 +1,6 @@
-const User = require('./User');
-const Character = require('./Character')
-const Campaign = require('./Campaign')
+const User = require('./user');
+const Character = require('./character')
+const Campaign = require('./campaign')
 
 Character.belongsTo(User, {
     foreignKey: 'player_id'
@@ -28,3 +28,6 @@ Campaign.hasMany(Character, {
     foreignKey: 'character_id',
     onDelete: 'CASCADE',
 });
+
+
+module.exports = {User, Campaign, Character};

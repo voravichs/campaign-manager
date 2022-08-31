@@ -2,6 +2,19 @@ const router = require("express").Router();
 const { Campaign } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+router.get('/', async (req, res) => {
+
+  try {
+    const campaignData = await Campaign.findAll();
+    const campagins = campaignData.map((campaign) => campaign.get({plain: true}));
+    res.status(200).json(campagins);
+  } catch (error) {
+    res.status(500).json(error);
+    
+  }
+});
+
+
 router.post("/", withAuth, async (req, res) => {
   try {
     const newCampaign = await Campaign.create({
