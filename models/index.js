@@ -1,6 +1,6 @@
-const User = require('./user');
-const Character = require('./character')
-const Campaign = require('./campaign')
+const User = require('./User');
+const Character = require('./Character')
+const Campaign = require('./Campaign')
 
 Character.belongsTo(User, {
     foreignKey: 'player_id'
