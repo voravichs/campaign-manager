@@ -14,12 +14,12 @@ const campaignData = [
   {
     name: 'Baldur’s Gate: Descent into Avernus',
     dm_id: 2,
-    character_id:4,
+    character_id:1,
   },
   {
     name: 'Storm King’s Thunder',
     dm_id: 2,
-    character_id: 4,
+    character_id: 2,
   },
 ];
 

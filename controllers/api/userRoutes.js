@@ -1,6 +1,18 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+router.get('/', async (req, res) => {
+
+  try {
+    const userData = await User.findAll();
+    const users = userData.map((user) => user.get({plain: true}));
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json(error);
+    
+  }
+});
+
 //* Signup New User
 router.post("/", async (req, res) => {
   try {
