@@ -29,4 +29,5 @@ Campaign.hasMany(Character, {
     onDelete: 'CASCADE',
 });
 
+
 module.exports = {User, Campaign, Character};
