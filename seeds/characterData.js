@@ -13,6 +13,12 @@ const characterData = [
     race: "elf",
     player_id: 4,
   },
+  {
+    name: 'tob',
+    class: "wizard",
+    race: "elf",
+    player_id: 2,
+  },
 ];
 
 const seedCharacters = () => Character.bulkCreate(characterData);
