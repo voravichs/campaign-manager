@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div>
+    <header class="bg-emerald-600 px-16 py-8 mb-12">
+      <nav class="pb-8 flex justify-evenly text-3xl text-yellow-100">
+        <a href="/" class="hover:font-bold transition-all"> Home </a>
+        {{#if is_dm}}
+        <a href="/profile/dm" class="hover:font-bold transition-all"> Profile </a>
+        {{else}}
+        <a href="/profile/player" class="hover:font-bold transition-all"> Profile </a>
+        {{/if}}
+        {{#if logged_in}}
+        <button class="hover:font-bold transition-all" id="logout">Logout</button>
+        {{else}}
+        <a class="hover:font-bold transition-all" href="/login">Login</a>
+        {{/if}}
+      </nav>
+      <div class="flex justify-center">
+        <p class="rounded-lg bg-yellow-100 text-5xl text-emerald-700 font-extrabold drop-shadow-xl p-4 border-2 border-emerald-500">
+          {{#if dashboard}}
+            Your Dashboard
+          {{else}}
+            PLACEHOLDER TEXT
+          {{/if}}
+        </p>
+      </div>
+     
+    </header>
+
+    <main class="container mx-auto">
+      {{{ body }}}
+    </main>
+  </div>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>

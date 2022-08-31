@@ -11,10 +11,9 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    type: {
-      type: DataTypes.STRING,
+    is_dm: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
- 
   },
 },
   {
