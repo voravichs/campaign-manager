@@ -1,0 +1,16 @@
+.bg-img {
+    background-image: url(../images/CM-logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+
+    height: 100vh;
+}
+
+.img-responsive {
+    /* display: block;  */
+    /* max-width: 100%; */
+    height: 100vh%;
+ } 
