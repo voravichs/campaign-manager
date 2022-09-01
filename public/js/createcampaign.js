@@ -1,20 +1,24 @@
 const createCampaignHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const campaignName = document.querySelector("#campaignName").value.trim();
+  const name = document.querySelector("#campaign-name").value.trim();
 
-    const response = await  fetch(`api/campaign`, {
-        method: 'POST',
-        body: JSON.stringify({campaignName})
+  if (name) {
+    const response = await fetch("api/campaigns", {
+      method: "POST",
+      body: JSON.stringify({ name }),
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to create campaign');
-      }
+      document.location.replace('/profile/dm');
+    } else {
+      alert('Failed to create campaign');
+    }  
+  }
+  
 };
 
 document
-    .querySelector('#createCampaignBtn')
-    .addEventListener( 'submit', createCampaignHandler);
+  .querySelector('.create-campaign')
+  .addEventListener('submit', createCampaignHandler);
