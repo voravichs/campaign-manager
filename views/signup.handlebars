@@ -1,32 +1,59 @@
-<div class="ring-4 ring-emerald-600 rounded mb-8">
-    <h2 class="bg-emerald-600 p-4 px-8 text-yellow-100 font-semibold text-4xl">Sign Up</h2>
 
-    <form class="bg-yellow-50 p-8 signup-form">
-        <div class="flex flex-col items-center mb-4">
-            <label for="name-signup" class="text-emerald-900 text-2xl mb-2 mr-2">Name: </label>
-            <input class="ring-2 rounded w-1/2 p-2" type="text" id="name-signup" />
-        </div>
-        <div class="flex flex-col items-center mb-4">
-            <label for="email-signup" class="text-emerald-900 text-2xl mb-2 mr-2">Email: </label>
-            <input class="ring-2 rounded w-1/2 p-2" type="text" id="email-signup" />
-        </div>
-        <div class="flex flex-col items-center mb-8">
-            <label for="password-signup" class="text-emerald-900 text-2xl mb-2 mr-2">Password: </label>
-            <input class="ring-2 rounded w-1/2 p-2" type="password" id="password-signup" />
-        </div>
-        <div class="flex flex-col items-center mb-8">
-            <label for="password-signup" class="text-emerald-900 text-2xl mb-2 mr-2">Will you be a DM? </label>
-            <input class="ring-2 rounded w-1/2 p-2" type="checkbox" id="is-dm">
-        </div>
-        <div class="mb-4">
-            <button
-                class="block w-1/2 text-yellow-100 text-2xl bg-emerald-600 hover:bg-emerald-700 transition-all ring-2 rounded-lg ring-emerald-500 p-4 mx-auto"
-                type="submit">
-                Sign Up
-            </button>
-        </div>
-        <a href="/login" class="flex justify-center text-indigo-500 hover:underline"> Return to login</a>
-    </form>
-</div>
+<div class="ring-4 ring-emerald-600 rounded mb-8 is block">
+ <form class="hero is-fullheight is is-left">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <div class="box">
+              <p class="has-text-weight-bold has-text-info-dark ">Sign Up</p>
+              <br />
+              <form>
+                  <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input is-medium has-text-link-dark " type="text" placeholder="Name" />
+                    <span class="icon is-medium is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-medium is-right">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    </p>
+                    </div>
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input is-medium has-text-link-dark" type="email" placeholder="Email" />
+                    <span class="icon is-medium is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-medium is-right">
+                      <i class="fas fa-check"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input class="input is-medium has-text-link-dark" type="password" placeholder="Password" />
+                    <span class="icon is-medium is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    Will you be a DM?
+                  </label>
+                </div>
+                <button class="button is-block is-info is-large is-fullwidth">Sign Up</button><br />
+                    </span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            <p class="has-text-grey">
+              <a href="#">Return to Login</a></a>
+            </p>
+            </div>
 
 <script src="./js/signup.js"></script>
+
