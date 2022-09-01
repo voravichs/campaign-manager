@@ -39,7 +39,8 @@ router.get("/:id", async (req, res) => {
 
         res.render("character", {
             ...character,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            is_dm: req.session.is_dm
         });
     } catch (err) {
         res.status(500).json(err);

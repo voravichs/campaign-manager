@@ -20,13 +20,15 @@ router.get("/signup", (req, res) => {
 
 router.get("/charcreate", (req, res) => {
   res.render("character-creation", {
-    logged_in: req.session.logged_in
+    logged_in: req.session.logged_in,
+    is_dm: req.session.is_dm
   });
 });
 
 router.get("/campaigncreate", (req, res) => {
   res.render("campaign-creation", {
-    logged_in: req.session.logged_in
+    logged_in: req.session.logged_in,
+    is_dm: req.session.is_dm
   });
 });
 
