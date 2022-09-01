@@ -4,7 +4,7 @@
     <p>Characters:</p>
     {{#each characters as |character|}}
     <a href="/profile/player/{{character.id}}">
-        {{character.name}} the {{character.race}} {{character.class}}
+        {{character.name}} the {{character.race}} {{character.charclass}}
     </a>
     {{/each}}
     {{#unless is_dm}}
@@ -13,7 +13,7 @@
         <button type="click" id="join-btn">Join With:</button>
         <select id="join-character">
             {{#each usercharacters as |usercharacter|}}
-            <option value="{{usercharacter.id}}"> {{usercharacter.name}} the {{usercharacter.race}} {{usercharacter.class}}</option>
+            <option value="{{usercharacter.id}}"> {{usercharacter.name}} the {{usercharacter.race}} {{usercharacter.charclass}}</option>
             {{/each}}
         </select>    
     </form>
