@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newCampaign = await Campaign.create({
       ...req.body,
@@ -26,7 +26,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const updatedCampaign = await Campaign.update(req.body, {
       where: {
@@ -40,7 +40,7 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const campaignData = await Campaign.destroy({
       where: {
