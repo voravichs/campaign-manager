@@ -5,7 +5,7 @@
     </div>
   </div>
 
-  <p>Choose Class and Species </p>
+  <p>Choose Class and Races </p>
   <div class="control">
     <div class="select is-dark has-dark">
       <select>
@@ -16,11 +16,9 @@
       <div class="control">
         <div class="select">
           <select>
-            <span></span>
-            <br>
-            <option>Human</option>
-            <option>Elf</option>
-            <option>halfling</option>
+            {{#each racelist as |race|}}
+            <option>{{race.name}}</option>
+            {{/each}}
           </select>
           <br>
           <div class="control">
