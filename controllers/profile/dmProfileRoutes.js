@@ -21,6 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 //* Get Campaign by id ()
+//* /profile/dm/:id
 router.get("/:id", async (req, res) => {
     try {
         const campaignData = await Campaign.findByPk(req.params.id, {

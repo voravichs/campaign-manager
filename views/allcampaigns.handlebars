@@ -1,1 +1,5 @@
 <p>This is all the campaigns in the database.</p>
+{{#each campaigns as |campaign|}}
+<a href="/profile/dm/{{campaign.id}}">{{name}}</a>
+<p>DM: {{user.username}}</p>
+{{/each}}
