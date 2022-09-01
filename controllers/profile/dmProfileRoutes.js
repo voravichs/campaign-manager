@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Campaign } = require("../../models");
+const { User, Campaign, Player, Character } = require("../../models");
 
 //* Show DM profile with all the User's campaigns
 router.get("/", async (req, res) => {
@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
         
         res.render("profile", {
             user,
-            logged_in: true,
+            logged_in: req.session.logged_in,
             is_dm: req.session.is_dm
         });
     } catch (err) {
@@ -29,9 +29,13 @@ router.get("/:id", async (req, res) => {
                     model: User,
                     attributes: { exclude: ["password"] },
                 },
+                {
+                    model: Character,
+                },
             ],
         });
         const campaign = campaignData.get({ plain: true });
+        console.log(campaign);
 
         res.render("campaign", {
             ...campaign,
