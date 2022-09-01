@@ -7,10 +7,9 @@ router.get('/', async (req, res) => {
   try {
     const campaignData = await Campaign.findAll();
     const campagins = campaignData.map((campaign) => campaign.get({plain: true}));
-    res.status(200).json(campagins);
+    res.status(200).json(campaigns);
   } catch (error) {
     res.status(500).json(error);
-    
   }
 });
 
