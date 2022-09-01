@@ -1,21 +1,19 @@
 const router = require("express").Router();
-const { User } = require("../../models");
-const withAuth = require("../../utils/auth");
+const { User, Campaign } = require("../../models");
 
 //* Show DM profile with all the User's campaigns
 router.get("/", async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
-            include: [{ model: Campaign }],
+            include: Campaign,
         });
-
         const user = userData.get({ plain: true });
-
+        
         res.render("profile", {
             user,
             logged_in: true,
-            is_dm: false //req.session.is_dm
+            is_dm: req.session.is_dm
         });
     } catch (err) {
         res.status(500).json(err);

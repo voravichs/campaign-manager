@@ -1,5 +1,8 @@
 {{#if is_dm}}
 <p>this is the dm profile</p>
+{{#each user.campaigns as |campaign|}}
+<p>{{campaign.name}}</p>
+{{/each}}
 <div class="flex justify-center">
   <button
     class="fixed bottom-12 rounded-full bg-yellow-50 hover:bg-yellow-100 text-4xl text-emerald-600 font-bold drop-shadow-xl p-8 ring-2 ring-emerald-500 hover:ring transition-all campaign-btn">
@@ -8,6 +11,9 @@
 </div>
 {{else}}
 <p>this is the player profile</p>
+{{#each user.characters as |character|}}
+<p>{{character.name}} the {{character.race}} {{character.class}}</p>
+{{/each}}
 <div class="flex justify-center">
   <button
     class="fixed bottom-12 rounded-full bg-yellow-50 hover:bg-yellow-100 text-4xl text-emerald-600 font-bold drop-shadow-xl p-8 ring-2 ring-emerald-500 hover:ring transition-all character-btn">

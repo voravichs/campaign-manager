@@ -21,14 +21,7 @@ Campaign.init(
         model: 'user',
         key: 'id',
       },
-    },
-    character_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'character',
-        key: 'id',
-      },
-    },
+    }
   },
   {
     sequelize,

@@ -30,13 +30,20 @@ Character.init(
         key: 'id',
       },
     },
+    campaign_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'campaign',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'character',
+    modelName: 'characters',
   }
 );
 
