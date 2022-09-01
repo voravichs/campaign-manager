@@ -1,31 +1,30 @@
-<div class="label is-link  has-text-link-dark ">Create Character</label>
+<label class="label is-link  has-text-link-dark "> Character</label>
+
+<form class="character-creation">
   <div class="field is level-left">
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-medium is-dark is-link has-text-link-dark" type="text" placeholder="Enter Name">
+      <input id="name" class="input is-medium is-dark is-link has-text-link-dark" type="text" placeholder="Enter Name">
     </div>
   </div>
-
-  <p>Choose Class and Races </p>
+  <p>Choose Class and Race </p>
   <div class="control">
     <div class="select is-dark has-dark">
-      <select>
+      <select id="class-select">
         {{#each classlist as |class|}}
         <option>{{class.name}}</option>
         {{/each}}
       </select>
-      <div class="control">
-        <div class="select">
-          <select>
-            {{#each racelist as |race|}}
-            <option>{{race.name}}</option>
-            {{/each}}
-          </select>
-          <br>
-          <div class="control">
-            <button class="button is-link">Submit</button>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="select is-dark has-dark">
+      <select id="race-select">
+        {{#each racelist as |race|}}
+        <option>{{race.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="control">
+      <button type="submit" class="button is-link">Submit</button>
     </div>
   </div>
-</div>
+</form>
+<script src="/js/createchar.js"></script>

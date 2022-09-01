@@ -34,7 +34,6 @@ router.get("/charcreate", (req, res) => {
           data.results.forEach((result) => {
             races.push(result);
           })
-          console.log(races);
           res.render("character-creation", {
             classlist: classes,
             racelist: races,
