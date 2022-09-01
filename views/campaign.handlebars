@@ -8,7 +8,16 @@
     </a>
     {{/each}}
     {{#unless is_dm}}
-    <button type="button" id="join-btn">join</button>
+
+    <form>
+        <button type="click" id="join-btn">Join With:</button>
+        <select id="join-character">
+            {{#each usercharacters as |usercharacter|}}
+            <option value="{{usercharacter.id}}"> {{usercharacter.name}} the {{usercharacter.race}} {{usercharacter.class}}</option>
+            {{/each}}
+        </select>    
+    </form>
+    
     {{/unless}}
 
     <script src="/js/joincampaign.js"></script>
