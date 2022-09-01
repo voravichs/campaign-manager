@@ -4,7 +4,7 @@ const withAuth = require("../utils/auth");
 
 // Landing Page/Show all campaigns
 router.get("/", async (req, res) => {
-//try {
+  //try {
 //  // Get all campaigns and JOIN with user data
 //  const campaignData = await Campaign.findAll();
 //
@@ -20,7 +20,8 @@ router.get("/", async (req, res) => {
 //  res.status(500).json(err);
 //}
   res.render("homepage", {
-    is_dm: true //req.session.is_dm
+    logged_in: req.session.logged_in,
+    is_dm: req.session.is_dm
   })
 });
 

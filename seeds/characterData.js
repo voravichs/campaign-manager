@@ -4,20 +4,23 @@ const characterData = [
   {
     name: 'Rob',
     class: "Cleric",
-    race: "human",
+    race: "Human",
     player_id: 3,
+    campaign_id: 3,
   },
   {
     name: 'Bob',
-    class: "fighter",
-    race: "elf",
+    class: "Fighter",
+    race: "Half-elf",
     player_id: 4,
+    campaign_id: 5,
   },
   {
-    name: 'tob',
-    class: "wizard",
-    race: "elf",
-    player_id: 2,
+    name: 'Toby',
+    class: "Wizard",
+    race: "Dragoborn",
+    player_id: 3,
+    campaign_id: 2,
   },
 ];
 

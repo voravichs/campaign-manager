@@ -20,7 +20,7 @@ const userData = [
     password: "Password123456",
   },
   {
-    is_dm: true,
+    is_dm: false,
     username: "PLAYER-Number-2",
     email: "P2@email.com",
     password: "Password1234567",
