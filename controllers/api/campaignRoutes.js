@@ -27,6 +27,7 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 router.put("/:id", withAuth, async (req, res) => {
+  console.log(req.body);
   try {
     const updatedCampaign = await Campaign.update(req.body, {
       where: {

@@ -1,21 +1,21 @@
 const joinHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector("#username-login").value.trim();
+    const campaignID = document.location.href.split("/")[document.location.href.split("/").length - 1];
+    const characterID = document.querySelector("#join-character").value;
+    console.log(JSON.stringify({ campaignID }));
 
-//if (username && password) {
-//    const response = await fetch("/api/users/login", {
-//        method: "POST",
-//        body: JSON.stringify({ username, password }),
-//        headers: { "Content-Type": "application/json" },
-//    });
-//
-//    if (response.ok) {
-//        document.location.replace("/");
-//    } else {
-//        alert(response.statusText);
-//    }
-//}
+    const response = await fetch("/api/characters/"+characterID, {
+        method: "PUT",
+        body: JSON.stringify({ campaignID }),
+        headers: { "Content-Type": "application/json" },
+    });
+    
+// if (response.ok) {
+//     document.location.replace("/profile/dm/"+campaignID);
+// } else {
+//     alert(response.statusText);
+// }
 };
 
 if (document.querySelector("#join-btn")) {
