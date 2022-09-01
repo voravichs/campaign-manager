@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const fetch = require('cross-fetch');
 const { User, Campaign } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -19,10 +20,20 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/charcreate", (req, res) => {
-  res.render("character-creation", {
-    logged_in: req.session.logged_in,
-    is_dm: req.session.is_dm
-  });
+  let classes = [];
+  fetch("https://www.dnd5eapi.co/api/classes")
+    .then((response) => response.json())
+    .then((data) => {
+      data.results.forEach((result) => {
+        classes.push(result);
+      })
+      console.log(classes);
+      res.render("character-creation", {
+        classlist: classes ,
+        logged_in: req.session.logged_in,
+        is_dm: req.session.is_dm
+      })
+    });
 });
 
 router.get("/campaigncreate", (req, res) => {
