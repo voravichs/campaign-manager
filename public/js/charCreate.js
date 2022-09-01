@@ -8,8 +8,8 @@ const charFormHandler = async (event) => {
     if (charName && className) {
       const response = await fetch("/api/characters", {
         method: "POST",
-        body: JSON.stringify({ charName, className, raceName  }),
-        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ charName, className, raceName}),
+        // headers: { "Content-Type": "application/json" },
       });
       if (response.ok) {
         response.status(200).json(response);
