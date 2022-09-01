@@ -3,7 +3,6 @@ const { Campaign } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.get('/', async (req, res) => {
-
   try {
     const campaignData = await Campaign.findAll();
     const campagins = campaignData.map((campaign) => campaign.get({plain: true}));
