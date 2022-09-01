@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Campaign } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Landing Page/Show all campaigns
@@ -20,35 +20,35 @@ router.get("/signup", (req, res) => {
 
 router.get("/charcreate", (req, res) => {
   res.render("character-creation", {
-    logged_in: req.session.logged_in
+    logged_in: req.session.logged_in,
+    is_dm: req.session.is_dm
   });
 });
 
 router.get("/campaigncreate", (req, res) => {
   res.render("campaign-creation", {
-    logged_in: req.session.logged_in
+    logged_in: req.session.logged_in,
+    is_dm: req.session.is_dm
   });
 });
 
 router.get("/campaigns/all", async (req, res) => {
-  // try {
-  //   const userData = await User.findByPk(req.session.user_id, {
-  //     attributes: { exclude: ["password"] },
-  //     include: Campaign,
-  //   });
-  //   const user = userData.get({ plain: true });
+  try {
+    const campaignData = await Campaign.findAll(
+      {
+        include: User,
+      }
+    );
+    const campaigns = campaignData.map((campaign) => campaign.get({ plain: true }));
 
-  //   res.render("profile", {
-  //     user,
-  //     logged_in: req.session.logged_in,
-  //     is_dm: req.session.is_dm
-  //   });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
-  res.render("allcampaigns", {
-    logged_in: req.session.logged_in
-  });
+    res.render("allcampaigns", {
+      campaigns,
+      logged_in: req.session.logged_in,
+      is_dm: req.session.is_dm
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
