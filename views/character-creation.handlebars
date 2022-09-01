@@ -1,36 +1,33 @@
 <div class="label is-link  has-text-link-dark ">Create Character</label>
- <div class="field is level-left">
-  <div class="control has-icons-left has-icons-right">
-    <input class="input is-medium is-dark is-link has-text-link-dark" id = "name" type="text" placeholder ="Enter Name">
+  <div class="field is level-left">
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-medium is-dark is-link has-text-link-dark" type="text" placeholder="Enter Name">
     </div>
   </div>
 
-<p>Choose Class and Species </p> 
+  <p>Choose Class and Species </p>
   <div class="control">
-  <div class="select is-dark has-dark" id = "class-select">
-    <select>
-      <span></span>
-      <option>Warrior</option>
-      <option>Mage</option>
-      <option>Rogue</option>
-    </select>
-  <div class="control">
-  <div class="select" id = "race-select">
-    <select>
-        <span></span>
-        <br>
-         <option>Human</option>
-         <option>Elf</option>
-        <option>halfling</option>
-    </select>
-    <br>
-    <div class="control" >
-      <button class="button is-link" id = "charSubmitBtn">Submit</button>
+    <div class="select is-dark has-dark">
+      <select>
+        {{#each classlist as |class|}}
+        <option>{{class.name}}</option>
+        {{/each}}
+      </select>
+      <div class="control">
+        <div class="select">
+          <select>
+            <span></span>
+            <br>
+            <option>Human</option>
+            <option>Elf</option>
+            <option>halfling</option>
+          </select>
+          <br>
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="./js/charCreate.js"></script>
   </div>
 </div>
-</div>
-</div>
-</div>
-
