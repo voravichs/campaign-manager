@@ -1,11 +1,15 @@
-<p>this is a campaign page</p>
-<p>DM: {{user.username}}</p>
-<p>Characters:</p>
-{{#each characters as |character|}}
-<a href="/profile/player/{{character.id}}">
-    {{character.name}} the {{character.race}} {{character.class}}
-</a>
-{{/each}}
-<button>join</button>
+<div>
+    <p>this is a campaign page</p>
+    <p>DM: {{user.username}}</p>
+    <p>Characters:</p>
+    {{#each characters as |character|}}
+    <a href="/profile/player/{{character.id}}">
+        {{character.name}} the {{character.race}} {{character.class}}
+    </a>
+    {{/each}}
+    {{#unless is_dm}}
+    <button type="button" id="join-btn">join</button>
+    {{/unless}}
 
-<script src="/js/joincampaign.js"></script>
+    <script src="/js/joincampaign.js"></script>
+</div>

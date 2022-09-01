@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Campaign, Player, Character } = require("../../models");
+const { User, Campaign, Character } = require("../../models");
 
 //* Show DM profile with all the User's campaigns
 router.get("/", async (req, res) => {
