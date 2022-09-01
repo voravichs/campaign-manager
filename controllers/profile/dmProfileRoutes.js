@@ -23,17 +23,18 @@ router.get("/", async (req, res) => {
 //* Get Campaign by id ()
 router.get("/:id", async (req, res) => {
     try {
-        const characterData = await Character.findByPk(req.params.id, {
+        const campaignData = await Campaign.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
+                    attributes: { exclude: ["password"] },
                 },
             ],
         });
-        const character = characterData.get({ plain: true });
+        const campaign = campaignData.get({ plain: true });
 
-        res.render("character", {
-            ...character,
+        res.render("campaign", {
+            ...campaign,
             logged_in: req.session.logged_in
         });
     } catch (err) {

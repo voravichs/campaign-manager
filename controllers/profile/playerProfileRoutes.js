@@ -27,10 +27,12 @@ router.get("/:id", async (req, res) => {
             include: [
                 {
                     model: User,
+                    attributes: { exclude: ["password"] },
                 },
             ],
         });
         const character = characterData.get({ plain: true });
+        console.log(character);
 
         res.render("character", {
             ...character,

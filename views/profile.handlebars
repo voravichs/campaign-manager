@@ -1,7 +1,9 @@
 {{#if is_dm}}
 <p>this is the dm profile</p>
 {{#each user.campaigns as |campaign|}}
-<p>{{campaign.name}}</p>
+<a href="/profile/dm/{{campaign.id}}">
+  {{campaign.name}}
+  </a>
 {{/each}}
 <div class="flex justify-center">
   <button
@@ -12,7 +14,9 @@
 {{else}}
 <p>this is the player profile</p>
 {{#each user.characters as |character|}}
-<p>{{character.name}} the {{character.race}} {{character.class}}</p>
+<a href="/profile/player/{{character.id}}">
+  {{character.name}} the {{character.race}} {{character.class}}
+</a>
 {{/each}}
 <div class="flex justify-center">
   <button
