@@ -3,21 +3,21 @@ const { Character } = require('../models');
 const characterData = [
   {
     name: 'Rob',
-    class: "Cleric",
+    charclass: "Cleric",
     race: "Human",
     player_id: 3,
     campaign_id: 3,
   },
   {
     name: 'Bob',
-    class: "Fighter",
+    charclass: "Fighter",
     race: "Half-elf",
     player_id: 4,
     campaign_id: 5,
   },
   {
     name: 'Tob',
-    class: "Wizard",
+    charclass: "Wizard",
     race: "Dragonborn",
     player_id: 3,
     campaign_id: null,

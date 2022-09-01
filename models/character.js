@@ -15,7 +15,7 @@ Character.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    class: {
+    charclass: {
       type: DataTypes.STRING,
       allowNull: false,
     },

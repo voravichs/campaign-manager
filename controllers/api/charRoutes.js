@@ -14,9 +14,11 @@ router.get('/', async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const newCharacter = await Character.create({
-      ...req.body
+      ...req.body,
+      player_id: req.session.user_id,
     });
 
     res.status(200).json(newCharacter);
