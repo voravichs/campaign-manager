@@ -22,7 +22,7 @@
 
   ## Usage 
 
-  ... 
+  To use the app simply create an account either as a dm or a player using the sign up option. From there you can access your profile and manage your campaigns as a DM. ALternatively if you have a player account, you can manage your characters, and which campaigns that character is in.
 
  ## Developed by
 
