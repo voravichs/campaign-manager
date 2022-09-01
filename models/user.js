@@ -19,11 +19,11 @@ User.init(
     is_dm: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-  },
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-  },
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,15 +31,15 @@ User.init(
       validate: {
         isEmail: true,
       },
-  },
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [8],
+      },
+    },
   },
-},
-},
   {
     hooks: {
       async beforeCreate(newUserData) {

@@ -44,14 +44,27 @@
                                         <span>Home</span>
                                     </a>
                                 </span>
+                                {{#if logged_in}}
+                                {{#if is_dm}}
                                 <span class="navbar-item">
-                                    <a class="button is-white is-light is-info is-selected" href="/profile">
+                                    <a class="button is-white is-light is-info is-selected" href="/profile/dm">
                                         <span class="icon">
                                             <i class="fa fa-superpowers"></i>
                                         </span>
                                         <span>Profile</span>
                                     </a>
                                 </span>
+                                {{else}}
+                                <span class="navbar-item">
+                                    <a class="button is-white is-light is-info is-selected" href="/profile/player">
+                                        <span class="icon">
+                                            <i class="fa fa-superpowers"></i>
+                                        </span>
+                                        <span>Profile</span>
+                                    </a>
+                                </span>
+                                {{/if}}
+                                {{/if}}
                                 {{#if logged_in}}
                                 <span class="navbar-item">
                                     <a class="button is-white is-light is-info is-selected" id="logout">
@@ -89,9 +102,9 @@
             </main>
         </div>
     </section>
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

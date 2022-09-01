@@ -4,7 +4,7 @@ const withAuth = require("../utils/auth");
 
 // Landing Page/Show all campaigns
 router.get("/", async (req, res) => {
-//try {
+  //try {
 //  // Get all campaigns and JOIN with user data
 //  const campaignData = await Campaign.findAll();
 //
