@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { User, Campaign, Character } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //* Show DM profile with all the User's campaigns
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
@@ -22,7 +23,7 @@ router.get("/", async (req, res) => {
 
 //* Get Campaign by id
 //* /profile/dm/:id
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
     try {
         const campaignData = await Campaign.findByPk(req.params.id, {
             include: [
@@ -43,22 +44,24 @@ router.get("/:id", async (req, res) => {
                 attributes: { exclude: ["password"] },
                 include: 
                 {
-                    model: Character,
-                    where: {
-                        campaign_id: null,
-                    }
+                    model: Character
                 }
             });
+            const user = userData.get({ plain: true });
+            res.render("campaign", {
+                ...campaign,
+                usercharacters: user.characters,
+                logged_in: req.session.logged_in,
+                is_dm: req.session.is_dm
+            });
+        } else {
+            res.render("campaign", {
+                ...campaign,
+                logged_in: req.session.logged_in,
+                is_dm: req.session.is_dm
+            });
         }
-        const user = userData.get({ plain: true });
-        console.log(user.characters);
-
-        res.render("campaign", {
-            ...campaign,
-            usercharacters: user.characters,
-            logged_in: req.session.logged_in,
-            is_dm: req.session.is_dm
-        });
+        
     } catch (err) {
         res.status(500).json(err);
     }
