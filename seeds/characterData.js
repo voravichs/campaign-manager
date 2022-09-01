@@ -16,9 +16,9 @@ const characterData = [
     campaign_id: 5,
   },
   {
-    name: 'Toby',
+    name: 'Tob',
     class: "Wizard",
-    race: "Dragoborn",
+    race: "Dragonborn",
     player_id: 3,
     campaign_id: null,
   },
