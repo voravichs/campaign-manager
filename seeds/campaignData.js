@@ -4,22 +4,22 @@ const campaignData = [
   {
     name: 'Curse of Strahd',
     dm_id: 1,
-    character_id: 3,
   },
   {
     name: 'Out of the Abyss',
-    dm_id: 2,
-    character_id: 3,
+    dm_id: 1,
   },
   {
-    name: 'Baldur’s Gate: Descent into Avernus',
+    name: 'Baldur\'s Gate: Descent into Avernus',
     dm_id: 2,
-    character_id:1,
   },
   {
-    name: 'Storm King’s Thunder',
+    name: 'Storm King\'s Thunder',
     dm_id: 2,
-    character_id: 2,
+  },
+  {
+    name: 'Rime of the Frostmaiden',
+    dm_id: 2,
   },
 ];
 

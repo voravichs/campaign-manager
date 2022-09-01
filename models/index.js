@@ -1,6 +1,6 @@
-const User = require('./user');
-const Character = require('./character')
-const Campaign = require('./campaign')
+const User = require('./User');
+const Character = require('./Character')
+const Campaign = require('./Campaign')
 
 Character.belongsTo(User, {
     foreignKey: 'player_id'
@@ -21,11 +21,11 @@ User.hasMany(Campaign, {
 });
 
 Character.belongsTo(Campaign, {
-    foreignKey: 'character_id'
+    foreignKey: 'campaign_id'
 });
 
 Campaign.hasMany(Character, {
-    foreignKey: 'character_id',
+    foreignKey: 'campaign_id',
     onDelete: 'CASCADE',
 });
 
