@@ -20,7 +20,7 @@ const characterData = [
     class: "Wizard",
     race: "Dragoborn",
     player_id: 3,
-    campaign_id: 2,
+    campaign_id: null,
   },
 ];
 

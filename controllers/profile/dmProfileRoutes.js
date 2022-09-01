@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
             include: Campaign,
         });
         const user = userData.get({ plain: true });
-        
+
         res.render("profile", {
             user,
             logged_in: req.session.logged_in,
@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-//* Get Campaign by id ()
+//* Get Campaign by id
 //* /profile/dm/:id
 router.get("/:id", async (req, res) => {
     try {
@@ -31,15 +31,31 @@ router.get("/:id", async (req, res) => {
                     attributes: { exclude: ["password"] },
                 },
                 {
-                    model: Character,
+                    model: Character
                 },
             ],
         });
         const campaign = campaignData.get({ plain: true });
-        console.log(campaign);
+
+        let userData;
+        if (!req.session.is_dm) {
+            userData = await User.findByPk(req.session.user_id, {
+                attributes: { exclude: ["password"] },
+                include: 
+                {
+                    model: Character,
+                    where: {
+                        campaign_id: null,
+                    }
+                }
+            });
+        }
+        const user = userData.get({ plain: true });
+        console.log(user.characters);
 
         res.render("campaign", {
             ...campaign,
+            usercharacters: user.characters,
             logged_in: req.session.logged_in,
             is_dm: req.session.is_dm
         });
