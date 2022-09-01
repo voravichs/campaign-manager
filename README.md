@@ -17,6 +17,8 @@
 
   Clone the repository to your machine and run the schema in SQL shell, run seeds first, then run server.js in the terminal to open locally in the browser.
 
+  Deployed application: https://campaign-manager-0.herokuapp.com/
+
 
   ## Usage 
 
