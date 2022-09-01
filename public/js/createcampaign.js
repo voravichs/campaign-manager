@@ -14,3 +14,7 @@ const createCampaignHandler = async (event) => {
         alert('Failed to create campaign');
       }
 };
+
+document
+    .querySelector('#createCampaignBtn')
+    .addEventListener( 'submit', createCampaignHandler);
