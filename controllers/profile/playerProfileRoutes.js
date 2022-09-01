@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
         
         res.render("profile", {
             user,
-            logged_in: true,
+            logged_in: req.session.logged_in,
             is_dm: req.session.is_dm
         });
     } catch (err) {
