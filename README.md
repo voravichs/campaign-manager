@@ -1,8 +1,8 @@
-# Campaign-Manager
+# Campaign-Manager 
 
 
   ## Table of Contents:
-  1. [Description](#description) 
+  1. [Description](#description) :registered:
   2. [Installation](#installation)
   3. [Usage](#usage)
   5. [Test Instructions](#testInstructions)
