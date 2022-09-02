@@ -1,5 +1,22 @@
-<p>This is all the campaigns in the database.</p>
+
 {{#each campaigns as |campaign|}}
-<a href="/profile/dm/{{campaign.id}}">{{name}}</a>
-<p>DM: {{user.username}}</p>
+<div class="block">
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+                <a href="/profile/dm/{{campaign.id}}">{{name}}</a>
+            </p>
+            <button class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </button>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <p>DM: {{user.username}}</p>
+            </div>
+        </div>
+    </div>
+</div>
 {{/each}}

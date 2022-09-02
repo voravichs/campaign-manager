@@ -1,11 +1,14 @@
-<div>
-    <p>this is a campaign page</p>
-    <p>DM: {{user.username}}</p>
-    <p>Characters:</p>
+<div class="container box has-text-centered">
+    <p class="is-size-1">{{name}}</p>
+    <p class="is-size-4">DM: {{user.username}}</p>
+    <hr>
+    <p class="is-size-4">Characters:</p>
+    <hr>
     {{#each characters as |character|}}
     <a href="/profile/player/{{character.id}}">
         {{character.name}} the {{character.race}} {{character.charclass}}
     </a>
+    <br>
     {{/each}}
     {{#unless is_dm}}
 

@@ -1,29 +1,50 @@
 <form class="login-form">
-  <p class="mb- `text-{"> Login to your account</p>
-  <div class="mb-4">
-    <input type="text" class="text-sky-400" placeholder="Username" id="username-login"/>
-  </div>
-  <div class="mb-4">
-    <input type="password" class="text-emerald-900 text-2xl mb-2 mr-2 " placeholder="Password" id="password-login"/>
-  </div>
-  <div class="text-center pt-1 mb-12 pb-1">
-    <button
-      class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
-      type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light" style="
+  <div class="container has-text-centered">
+    <div class="column is-half is-offset-one-quarter">
+      <div class="box">
+        <p class="has-text-weight-bold has-text-info-dark ">Login to your Account</p>
+        <br />
+        <form>
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input is-medium has-text-link-dark " type="text" placeholder="Username"
+                id="username-login" />
+              <span class="icon is-medium is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-medium is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input is-medium has-text-link-dark" type="password" placeholder="Password"
+                id="password-login" />
+              <span class="icon is-medium is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <button type="submit" class="button is-block is-info is-large is-fullwidth" style="
                         background: linear-gradient(
                           to right,
                           #504fa4,
                           #d26517,
                           #2d45b1,
                           #d97b0f
-                        );
-                      ">
-      Log in
-    </button>
-    <p class="flex justify-center"> Don't have an account? <a href="/signup"
-        class="ml-2 text-indigo-500 hover:underline"> Sign up here.</a></p>
+                        );">
+            Log In
+          </button>
+          <br />
+          <p class="has-text-grey">
+            <a href="/login">
+              Don't have an account? <a href="/signup"> Sign up here.</a>
+            </a>
+          </p>
+      </div>
+    </div>
+  </div>
 </form>
-</div>
-
 
 <script src="./js/login.js"></script>
