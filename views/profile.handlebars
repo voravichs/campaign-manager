@@ -1,29 +1,52 @@
 {{#if is_dm}}
-<p>this is the dm profile</p>
 {{#each user.campaigns as |campaign|}}
-<a href="/profile/dm/{{campaign.id}}">
-  {{campaign.name}}
-  </a>
-{{/each}}
-<div class="flex justify-center">
-  <button
-    class="fixed bottom-12 rounded-full bg-yellow-50 hover:bg-yellow-100 text-4xl text-emerald-600 font-bold drop-shadow-xl p-8 ring-2 ring-emerald-500 hover:ring transition-all campaign-btn">
-    + New Campaign
-  </button>
+<div class="block">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        <a href="/profile/dm/{{campaign.id}}">
+          {{campaign.name}}
+        </a>
+      </p>
+      <button class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </header>
+  </div>
 </div>
+{{/each}}
+<button class="campaign-btn is-large">
+  + New Campaign
+</button>
+
+
+
 {{else}}
-<p>this is the player profile</p>
 {{#each user.characters as |character|}}
-<a href="/profile/player/{{character.id}}">
-  {{character.name}} the {{character.race}} {{character.charclass}}
-</a>
-{{/each}}
-<div class="flex justify-center">
-  <button
-    class="fixed bottom-12 rounded-full bg-yellow-50 hover:bg-yellow-100 text-4xl text-emerald-600 font-bold drop-shadow-xl p-8 ring-2 ring-emerald-500 hover:ring transition-all character-btn">
-    + New Character
-  </button>
+<div class="block">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        <a href="/profile/dm/{{campaign.id}}">
+          <a href="/profile/player/{{character.id}}">
+            {{character.name}} the {{character.race}} {{character.charclass}}
+          </a>
+        </a>
+      </p>
+      <button class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </header>
+  </div>
 </div>
+{{/each}}
+<button class="character-btn">
+  + New Character
+</button>
 {{/if}}
 
 <script src="/js/profile.js"></script>

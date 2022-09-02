@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <section class="hero is-info is-fullheight">
         <div class="bg-img">
             <div class="hero-head">
@@ -27,11 +26,10 @@
                             <a class="image is-128x128" href="/">
                                 <img src="/images/CM1-logo.png">
                             </a>
-                            </a>
                             <span class="navbar-burger burger" data-target="navbarMenu">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
                             </span>
                         </div>
                         <div id="navbarMenu" class="navbar-menu">
@@ -97,7 +95,7 @@
                     </div>
                 </nav>
             </div>
-            <main class="hero is-large">
+            <main class="hero is-medium">
                 {{{ body }}}
             </main>
         </div>
@@ -105,6 +103,8 @@
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
+    <script src="/js/main.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </body>
 
 </html>
